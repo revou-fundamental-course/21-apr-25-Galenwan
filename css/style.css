@@ -12,7 +12,6 @@ button {
     border: none;
     padding: 8px;
     border-radius: 8px;
-
 }
 
 .bg-1 {
@@ -50,4 +49,9 @@ textarea {
 .formula {
     font-style: italic;
     font-size: xx-large;
+}
+
+.FtoC {
+    text-decoration: underline;
+    color: blue;
 }

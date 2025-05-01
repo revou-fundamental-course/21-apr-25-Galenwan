@@ -26,7 +26,7 @@
             <!-- Dummy Intro -->
             <p>
                 Enter temperature in degrees Celcius (&deg;C) in the box below, then click the Conversion button
-                to get the result the conversion in degrees Fahrenheit (&deg;F).
+                to get the result of the conversion in degrees Fahrenheit (&deg;F).
             </p>
             <p>
                 Press the Reset button to clear all numbers in the box below.
@@ -39,7 +39,7 @@
         <!-- Temperature Conversion Form -->
         <form class="section-content" name="form-input">
             <div class="section-item">
-                <label id="input-label" for="temp-input">Celcius (&deg;C):</label>
+                <label id="input-label" for="temp-input">Celcius (&deg;C) :</label>
             </div>
 
             <div class="section-item">
@@ -50,14 +50,14 @@
             <div class="section-item">
                 <button class="bg-1" type="button" onclick="calculateForm()"> Conversion</button>
                 <button class="bg-2" type="button" onclick="resetForm()">Reset</button>
-                <button class="bg-3" type="button" onclick="reverseForm1()" onclick="reverseForm2()">Reverse</button>
+                <button class="bg-3" id="reverse-button" type="button" onclick="reverseForm()">Reverse</button>
             </div>
         </form>
 
         <!-- Result of Conversion -->
         <section class="section-content">
             <div class="section-item">
-                <label id="output-label" for="temp-output">Fahrenheit (&deg;F):</label>
+                <label id="output-label" for="temp-output">Fahrenheit (&deg;F) :</label>
             </div>
 
             <div class="section">
@@ -76,31 +76,58 @@
             </div>
         </section>
 
+        <!-- Change Calculator-->
+        <section class="section-content">
+            <div class="section-item">
+                <label class="FtoC" onclick="FtoC()">Fahrenheit to Celcius</label>
+            </div>
+         </section>
+
         <!-- Additional Explanation -->
         <section>
             <header>
-                <h1>How to Convert Celcius (&deg;C) to Fahrenheit (&deg;F)</h1>
+                <h1 id="original-header">How to Convert Celcius (&deg;C) to Fahrenheit (&deg;F)</h1>
+                <h1 id="original-h" style="display: none;">How to Convert Celcius (&deg;C) to Fahrenheit (&deg;F)</h1>
+                <h1 id="alternate-h" style="display: none;">How to Convert Fahrenheit (&deg;F) to Celcius (&deg;C)</h1>
             </header>
 
             <hr />
 
             <!-- Infomation Content -->
             <article>
-                <p>Temperature <span class="formula">T</span> in degrees Fahrenheit (&deg;F) is the same as 
+                <p id="original-explanation">Temperature <span class="formula">T</span> in degrees Fahrenheit (&deg;F) is the same as 
                 temperature <span class="formula">T</span> in degrees Celcius (&deg;C) multiplied by 9/5 plus 32</p>
-
+                <p id="original-exp" style="display: none;">Temperature <span class="formula">
+                    T</span> in degrees Fahrenheit (&deg;F) is the same as 
+                    temperature <span class="formula">T</span> in degrees Celcius (&deg;C) multiplied by 9/5 plus 32</p>
+                <p id="alternate-exp" style="display: none;">Temperature <span class="formula">
+                    T</span> in degrees Celcius (&deg;C) is the same as 
+                    temperature <span class="formula">T</span> in degrees Fahrenheit (&deg;F) minus 32 then multiplied by 5/9</p>
                 <!-- Formula -->
-                <div class="formula">
+                <div id="original-formula1" class="formula">
                     T<sub>(&deg;F)</sub> = (T<sub>(&deg;C)</sub> x 9/5) + 32
                 </div>
+                <div id="original-f1" class="formula" style="display: none;">
+                    T<sub>(&deg;F)</sub> = (T<sub>(&deg;C)</sub> x 9/5) + 32
+                </div>
+                <div id="alternate-f1" class="formula" style="display: none;">
+                    T<sub>(&deg;C)</sub> = (T<sub>(&deg;F)</sub> - 32) * 5/9
+                </div>
+
                 <div>
                     <br>
                     or
                 </div>
                 <br>
 
-                <div class="formula">
+                <div id="original-formula2" class="formula">
                     T<sub>(&deg;F)</sub> = (T<sub>(&deg;C)</sub> x 1.8) + 32
+                </div>
+                <div id="original-f2" class="formula" style="display: none;">
+                    T<sub>(&deg;F)</sub> = (T<sub>(&deg;C)</sub> x 1.8) + 32
+                </div>
+                <div id="alternate-f2" class="formula" style="display: none;">
+                    T<sub>(&deg;C)</sub> = (T<sub>(&deg;F)</sub> - 32) * 5/9
                 </div>
             </article>
         </section>
@@ -108,6 +135,8 @@
 
     <span id="unit-label-C" style="display:none">&deg;C</span>
     <span id="unit-label-F" style="display:none">&deg;F</span>
+    <span id="original-input" style="display:none">Celcius (&deg;C) :</span>
+    <span id="original-output" style="display:none">Fahrenheit (&deg;F) :</span>
 
     <!-- Footer Content -->
     <footer>
