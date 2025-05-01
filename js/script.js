@@ -28,7 +28,7 @@ function FtoC() {
         document.getElementById("original-header").innerHTML = oriHeader;
         document.getElementById("original-explanation").innerHTML = oriExp;
         document.getElementById("original-formula1").innerHTML = oriFormula1;
-        document.getElementById("original-formula1").innerHTML = oriFormula2;
+        document.getElementById("original-formula2").innerHTML = oriFormula2;
     }
 
 }
