@@ -24,18 +24,22 @@
         <!-- Introduction -->
         <section>
             <!-- Dummy Intro -->
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-                into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-                release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
-                software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <p>
+                Enter temperature in degrees Celcius (&deg;C) in the box below, then click the Conversion button
+                to get the result the conversion in degrees Fahrenheit (&deg;F).
+            </p>
+            <p>
+                Press the Reset button to clear all numbers in the box below.
+            </p>
+            <p>
+                Press the Reverse button to change the numbers in the input box and the output box.
+            </p>
         </section>
 
         <!-- Temperature Conversion Form -->
         <form class="section-content" name="form-input">
             <div class="section-item">
-                <label for="temp-input">Celcius (&deg;C):</label>
+                <label id="input-label" for="temp-input">Celcius (&deg;C):</label>
             </div>
 
             <div class="section-item">
@@ -46,14 +50,14 @@
             <div class="section-item">
                 <button class="bg-1" type="button" onclick="calculateForm()"> Conversion</button>
                 <button class="bg-2" type="button" onclick="resetForm()">Reset</button>
-                <button class="bg-3" type="button" onclick="reverseForm()">Reverse</button>
+                <button class="bg-3" type="button" onclick="reverseForm1()" onclick="reverseForm2()">Reverse</button>
             </div>
         </form>
 
         <!-- Result of Conversion -->
         <section class="section-content">
             <div class="section-item">
-                <label for="temp-output">Fahrenheit (&deg;F):</label>
+                <label id="output-label" for="temp-output">Fahrenheit (&deg;F):</label>
             </div>
 
             <div class="section">
@@ -82,7 +86,8 @@
 
             <!-- Infomation Content -->
             <article>
-                <p>Temperature <span class="formula">T</span> in degrees Fahrenheit (&deg;F)</p>
+                <p>Temperature <span class="formula">T</span> in degrees Fahrenheit (&deg;F) is the same as 
+                temperature <span class="formula">T</span> in degrees Celcius (&deg;C) multiplied by 9/5 plus 32</p>
 
                 <!-- Formula -->
                 <div class="formula">
@@ -95,7 +100,7 @@
                 <br>
 
                 <div class="formula">
-                    T<sub>(&deg;F)</sub> = (T<sub>(&deg;C)</sub> x 1,8) + 32
+                    T<sub>(&deg;F)</sub> = (T<sub>(&deg;C)</sub> x 1.8) + 32
                 </div>
             </article>
         </section>
