@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- Java External -->
+<script src="js/script.js"></script>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Konversi Suhu - Yama</title>
+    <title>Temperature Conversion - Galinna</title>
 
     <!-- CSS External -->
     <link rel="stylesheet" href="css/style.css">
@@ -13,7 +16,7 @@
 <body>
     <!-- Header Content -->
     <header>
-        <h1>Website Konversi Suhu - Yama</h1>
+        <h1>Temperature Conversion - Galinna</h1>
     </header>
 
     <!-- Main Content -->
@@ -29,39 +32,39 @@
                 software like Aldus PageMaker including versions of Lorem Ipsum.</p>
         </section>
 
-        <!-- Form Konversi Suhu -->
-        <form class="section-content">
+        <!-- Temperature Conversion Form -->
+        <form class="section-content" name="form-input">
             <div class="section-item">
-                <label for="konversi-input">Celcius (&deg;C):</label>
+                <label for="temp-input">Celcius (&deg;C):</label>
             </div>
 
             <div class="section-item">
-                <textarea id="konversi-input"></textarea>
+                <textarea input name="temp-input" id="temp-input"></textarea>
             </div>
 
             <!-- Form Action -->
             <div class="section-item">
-                <button class="bg-1">Konversi</button>
-                <button class="bg-2">Reset</button>
-                <button class="bg-3">Reverse</button>
+                <button class="bg-1" type="button" onclick="calculateForm()"> Conversion</button>
+                <button class="bg-2" type="button" onclick="resetForm()">Reset</button>
+                <button class="bg-3" type="button" onclick="reverseForm()">Reverse</button>
             </div>
         </form>
 
-        <!-- Hasil Konversi Suhu -->
+        <!-- Result of Conversion -->
         <section class="section-content">
             <div class="section-item">
-                <label for="result-input">Fahrenheit (&deg;F):</label>
+                <label for="temp-output">Fahrenheit (&deg;F):</label>
             </div>
 
-            <div class="section-item">
-                <textarea id="result-input" readonly></textarea>
+            <div class="section">
+                <textarea id="temp-output" readonly></textarea>
             </div>
         </section>
 
-        <!-- Penjelasan -->
+        <!-- Explanation -->
         <section class="section-content">
             <div class="section-item">
-                <label for="calculate-detail">Cara Kalkulasi:</label>
+                <label for="calculate-detail">How to Calculate:</label>
             </div>
 
             <div class="section-item">
@@ -69,36 +72,41 @@
             </div>
         </section>
 
-        <!-- Informasi Tambahan -->
+        <!-- Additional Explanation -->
         <section>
             <header>
-                <h1>Cara Konversi Dari Celcius (&deg;C) ke Fahrenheit (&deg;F)</h1>
+                <h1>How to Convert Celcius (&deg;C) to Fahrenheit (&deg;F)</h1>
             </header>
 
             <hr />
 
-            <!-- Konten Informasi -->
+            <!-- Infomation Content -->
             <article>
-                <p>Suhu <span class="formula">S</span> dalam derajat Fahrenheit (&deg;F)</p>
+                <p>Temperature <span class="formula">T</span> in degrees Fahrenheit (&deg;F)</p>
 
                 <!-- Formula -->
                 <div class="formula">
-                    S<sub>(&deg;F)</sub> = (S<sub>(&deg;C)</sub> x 9/5) + 32
+                    T<sub>(&deg;F)</sub> = (T<sub>(&deg;C)</sub> x 9/5) + 32
                 </div>
                 <div>
-                    atau
+                    <br>
+                    or
                 </div>
+                <br>
 
                 <div class="formula">
-                    S<sub>(&deg;F)</sub> = (S<sub>(&deg;C)</sub> x 1,8) + 32
+                    T<sub>(&deg;F)</sub> = (T<sub>(&deg;C)</sub> x 1,8) + 32
                 </div>
             </article>
         </section>
     </main>
 
+    <span id="unit-label-C" style="display:none">&deg;C</span>
+    <span id="unit-label-F" style="display:none">&deg;F</span>
+
     <!-- Footer Content -->
     <footer>
-        <p>&copy; 2025 Yama. All rights reserved.</p>
+        <!-- <p>&copy; 2025 Galinna. All rights reserved.</p> -->
     </footer>
 </body>
 
